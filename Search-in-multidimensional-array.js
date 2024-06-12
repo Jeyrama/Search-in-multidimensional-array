@@ -10,3 +10,7 @@ Example:
 
 
 // Solution
+
+let locate = function(arr, v) {
+  return arr.some(function(e) { return Array.isArray(e) ? locate(e, v) : e === v; });
+}
