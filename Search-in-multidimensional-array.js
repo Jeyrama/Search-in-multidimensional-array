@@ -16,3 +16,17 @@ let locate = function(arr, v) {
 }
 
 // or
+
+function locate(array, value){
+  let queue = array,
+      next;
+  while(queue.length){
+    next = queue.shift();
+    if(Array.isArray(next)){
+      queue = queue.concat(next);
+    } else if(next == value){
+      return true;
+    }
+  }
+  return false;
+}
